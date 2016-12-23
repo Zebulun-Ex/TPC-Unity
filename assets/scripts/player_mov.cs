@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class player_mov : MonoBehaviour {
@@ -25,7 +26,7 @@ public class player_mov : MonoBehaviour {
 		float rotate_speed = 10f;
 		player.localRotation = Quaternion.LerpUnclamped (player.localRotation, Quaternion.Euler (0, deg, 0), Time.deltaTime * rotate_speed);
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -47,7 +48,7 @@ public class player_mov : MonoBehaviour {
 			anim.SetBool("jump", false);
 		}
 
-		inputH = Input.GetAxis ("Horizontal");
+		inputH = Input.GetAxis ("Horisontal");
 		inputV = Input.GetAxis ("Vertical");
 
 		anim.SetFloat("inputH",inputH);
@@ -57,7 +58,7 @@ public class player_mov : MonoBehaviour {
 		float moveX = inputH*50f*Time.deltaTime;
 		float moveZ = inputV*50f*Time.deltaTime;
 
-	
+
 
 		if(moveZ < 0f)
 		{
@@ -70,7 +71,7 @@ public class player_mov : MonoBehaviour {
 				moveX*=3f;
 				moveZ*=3f;
 			}
-	
+
 		}
 
 		else if(moveZ > 0f)
@@ -111,14 +112,3 @@ public class player_mov : MonoBehaviour {
 
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
